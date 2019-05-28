@@ -4,7 +4,8 @@
 #
 # See documentation in:
 # http://doc.scrapy.org/en/latest/topics/items.html
-from scrapy import Item,Field
+from scrapy import Item, Field
+
 
 class News163Item(Item):
     # define the fields for your item here like:
