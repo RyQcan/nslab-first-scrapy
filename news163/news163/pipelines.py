@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 import re
 
 engine = create_engine(
-    "mysql+pymysql://root:root@localhost/mysql?charset=utf8", max_overflow=5)
+    "mysql+pymysql://root:root@localhost/scrapy?charset=utf8", max_overflow=5)
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
 session = Session()

@@ -1,4 +1,4 @@
-#encoding: utf-8
+# -*- coding: utf-8 -*-
 import scrapy
 import re
 from scrapy.selector import Selector
@@ -12,7 +12,7 @@ class ExampleSpider(CrawlSpider):
     allowed_domains = ["news.163.com"]
     start_urls = ['https://news.163.com/']
     rules = (
-        Rule(LinkExtractor(allow=r"/17/03\d+/\d+/*"),
+        Rule(LinkExtractor(allow=r"/19/*"),
              callback="parse_news", follow=True),
     )
 
@@ -23,6 +23,9 @@ class ExampleSpider(CrawlSpider):
     def parse_news(self, response):
         item = News163Item()
         item['news_thread'] = response.url.strip().split('/')[-1][:-5]
+        print("==============================================\n")
+        print(item['news_thread'])
+        print("==============================================\n")
         self.get_title(response, item)
         self.get_source(response, item)
         self.get_url(response, item)
