@@ -15,6 +15,7 @@ session = Session()
 
 class Newstable(Base):
     __tablename__ = 'learn_newstable'
+    
     id = Column(Integer, primary_key=True)
     news_body = Column(TEXT)
     news_title = Column(String(32))
